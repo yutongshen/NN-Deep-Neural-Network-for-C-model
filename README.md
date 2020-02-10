@@ -2,7 +2,7 @@
 ## Deep Neural Network for C model
 
 ## Environment
-- Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-34-generic x86_64)
+- Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-34-generic x86\_64)
 
 ## Prerequisite
 - g++ 7.4.0
@@ -51,14 +51,14 @@ $ ./network 1
 ```
 - `lib/libdqn.so`: 編譯完成的 library 檔。
 - `libdqn.h`: Prototype 宣告。
-- `libarr_2.cpp`: Array<T> 物件實作。
+- `libarr_2.cpp`: Array\<T\> 物件實作。
 - `libdqn.cpp`: DataReader 物件實作。
 - `libnet.cpp`: Layer 、 Optimizer 、 Model 物件實作。
 - `libpair.cpp`: Pair 物件實作。
 - `libstruct.cpp`: FixPoint 物件實作。
 - `libtuple.cpp`: Tuple 物件實作。
 - `main.cpp`: 範例 main program。
-- `mnist_model_fc_001.pmt`: 已訓練模型參數(Array<T> 檔案型式)。
+- `mnist_model_fc_001.pmt`: 已訓練模型參數(Array\<T\> 檔案型式)。
 - `Makefile`: 自動化腳本。
 
 ## Analysis main.cpp
@@ -68,7 +68,7 @@ $ ./network 1
 #include "libdqn.h"
 ```
 
-- 先宣告函式 showImg(const Array<FixPoint>& img, const FixPoint& threshold) 用來打印 MNIST 圖形
+- 先宣告函式 showImg(const Array\<FixPoint\>& img, const FixPoint& threshold) 用來打印 MNIST 圖形
 ```cpp=
 void showImg(const Array<FixPoint>& img, const FixPoint& threshold) {
   int i, j;
@@ -134,7 +134,7 @@ int main(int argc, char **argv) {
     // ---------------------------------
 ```
 
-- 當程式為訓練模式，隨機抽樣0~59999等256個數字放進 batch ，當作這批次訓練資料的 index ，利用 dr.read_x_train(batch) 及 dr.read_y_train(batch) 來索引訓練資料及標籤，接著使用 model.fit 來更新模型，最後打印出 loss 及 accuracy
+- 當程式為訓練模式，隨機抽樣0~59999等256個數字放進 batch ，當作這批次訓練資料的 index ，利用 dr.read_x_train(batch) 及 dr.read\_y\_train(batch) 來索引訓練資料及標籤，接著使用 model.fit 來更新模型，最後打印出 loss 及 accuracy
 ```cpp=
     // ----------- Training ------------
     if (argc == 1 || argv[1][0] == '0') {
