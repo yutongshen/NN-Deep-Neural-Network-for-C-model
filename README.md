@@ -13,12 +13,12 @@ $ make
 ```
 
 ## Usage
-### Train
+### Train Mode
 ```shell
 $ ./network 0
 ```
 
-### Inference
+### Inference Mode
 ```shell
 $ ./network 1
 ```
