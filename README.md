@@ -63,13 +63,13 @@ $ ./network 1
 
 ## Analysis main.cpp
 - 首先 include 函式庫的 Prototype
-```C++=
+```cpp=
 #include <iostream>
 #include "libdqn.h"
 ```
 
 - 先宣告函式 showImg(const Array<FixPoint>& img, const FixPoint& threshold) 用來打印 MNIST 圖形
-```C++=
+```cpp=
 void showImg(const Array<FixPoint>& img, const FixPoint& threshold) {
   int i, j;
   cout << "   ------------------------------------------------------------" << endl;
@@ -104,7 +104,7 @@ Array<T> 資料行別應使用 at 函式取值，如img.at(0, 0, i - 1, j - 1)
 :::
 
 - main 一開始先初始化隨機種子，並將 train 、 test 資料載入 DataReader
-```C++=
+```cpp=
 int main(int argc, char **argv) {
   rnd_init();
   try {
@@ -116,7 +116,7 @@ int main(int argc, char **argv) {
 ```
 
 - 建構 Model
-```C++=
+```cpp=
     // ---------- Build Model ----------
     Model model;
     model.add(new Inputs(1, 28, 28, -1));
@@ -135,7 +135,7 @@ int main(int argc, char **argv) {
 ```
 
 - 當程式為訓練模式，隨機抽樣0~59999等256個數字放進 batch ，當作這批次訓練資料的 index ，利用 dr.read_x_train(batch) 及 dr.read_y_train(batch) 來索引訓練資料及標籤，接著使用 model.fit 來更新模型，最後打印出 loss 及 accuracy
-```C++=
+```cpp=
     // ----------- Training ------------
     if (argc == 1 || argv[1][0] == '0') {
       for (i = 0; i < 100; ++i) {
@@ -149,7 +149,7 @@ int main(int argc, char **argv) {
 ```
 
 - 當程式為預測模式，使用者可以輸入0~9999數字挑選任一測試圖片，利用 model.predict 函式進行預測，最後打印出預測結果及圖形
-```C++=
+```cpp=
     // ---------- Inference ------------
     else {
       model.load_paras("mnist_model_fc_001.pmt");
