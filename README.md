@@ -196,4 +196,4 @@ int main(int argc, char **argv) {
 ## Authors
 [Yu-Tong Shen](https://github.com/yutongshen/)
 
-###### tags: `Data Mining`
+###### tags: `Neural Network`
