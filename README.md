@@ -156,7 +156,6 @@ int main(int argc, char **argv) {
       bool loop(true);
       int n;
       FixPoint threshold(0.5);
-      int* acc_in, *acc_out;
       while (loop) {
         cout << "Please input a number (0 ~ 9999): ";
         cin >> n;
@@ -181,8 +180,6 @@ int main(int argc, char **argv) {
         showImg(input_data, threshold);
         cout << endl;
         // -------------------------------
-        delete [] acc_in;
-        //delete [] acc_out;
       }
     }
   }
